@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Lumina — Install it once. Stay out of the crowd.</title>
+<meta name="description" content="Lumina matches professionals on substance, not spectacle. Connect LinkedIn + GitHub once — Lumina reads your work and never shows it. Bucket-matched dating for builders, academics, artists and more." />
+<meta property="og:title" content="Lumina — Install it once. Stay out of the crowd." />
+<meta property="og:description" content="Dating for people with a career. Matched on what you built, not what you look like." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#05060a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◈</text></svg>" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor-dot"></div><div class="cursor-ring"></div></div>
+<div class="scroll-progress" aria-hidden="true"><i id="progressBar"></i></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" data-cursor="link">
+    <span class="brand-mark">◈</span>
+    <span class="brand-name">LUMINA</span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#how" data-cursor="link">How it works</a>
+    <a href="#buckets" data-cursor="link">Buckets</a>
+    <a href="#engine" data-cursor="link">Engine</a>
+    <a href="#privacy" data-cursor="link">Privacy</a>
+    <a href="#features" data-cursor="link">Features</a>
+    <a href="#pricing" data-cursor="link">Pricing</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="#get" class="btn btn-ghost" data-cursor="link">Sign in</a>
+    <a href="#get" class="btn btn-solid" data-cursor="link">Get Lumina</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+</header>
+
+<main id="top">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow" data-reveal>
+        <span class="dot"></span> Private beta · India-first · 10 buckets
+      </div>
+      <h1 class="hero-title">
+        <span class="line" data-reveal data-delay="60">Install it once.</span>
+        <span class="line grad" data-reveal data-delay="140">Stay out of</span>
+        <span class="line" data-reveal data-delay="220">the crowd.</span>
+      </h1>
+      <p class="hero-sub" data-reveal data-delay="320">
+        Every other app matched you on <em>six photos and a rehearsed bio</em>.
+        Lumina reads what you've <strong>built, studied and shipped</strong> —
+        then never shows it. You get matched on substance, in your own orbit.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="400">
+        <a href="#get" class="btn btn-solid btn-lg" data-cursor="link">
+          <span>Get Lumina</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how" class="btn btn-ghost btn-lg" data-cursor="link">See how it works</a>
+      </div>
+      <div class="hero-proof" data-reveal data-delay="480">
+        <div class="avatars">
+          <span style="--a:#7C5CFF">R</span><span style="--a:#22E4FF">M</span><span style="--a:#C6FF3D">A</span><span style="--a:#FF5C8A">J</span>
+        </div>
+        <p><strong>Private beta</strong> · 10 buckets · <span class="mono">never</span> a job title on a profile</p>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-reveal data-delay="200">
+      <div class="deck" id="deck">
+        <div class="card card-back"></div>
+        <div class="card card-mid"></div>
+        <article class="card card-front" data-tilt>
+          <div class="card-glow"></div>
+          <header class="card-top">
+            <div class="avatar" style="--a:#7C5CFF;--b:#22E4FF">AR</div>
+            <div class="card-id">
+              <h3>Aarav R.</h3>
+              <p><span class="pin">◉</span> Bengaluru · 29</p>
+            </div>
+            <div class="ring" style="--pct:0.87">
+              <span>87<small>%</small></span>
+            </div>
+          </header>
+          <div class="card-tags">
+            <span class="tag">academics</span>
+            <span class="tag">builders</span>
+            <span class="tag alt">adjacent</span>
+          </div>
+          <p class="card-bio">Researches distributed systems. Builds small tools at 2am. Will absolutely talk about your thesis for four hours.</p>
+          <div class="card-meta">
+            <div class="compat">
+              <div class="compat-row"><span>Vector</span><i style="--w:91%"></i></div>
+              <div class="compat-row"><span>Quiz</span><i style="--w:84%"></i></div>
+              <div class="compat-row"><span>Values</span><i style="--w:78%"></i></div>
+            </div>
+            <div class="card-note">
+              <span class="lock">◉</span>
+              <p>LinkedIn title, company & repos<br /><strong>never rendered</strong></p>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="round skip" data-cursor="link" aria-label="Skip">✕</button>
+            <button class="round like" data-cursor="link" aria-label="Like">♥</button>
+          </div>
+        </article>
+      </div>
+      <div class="float-chip chip-1" data-float>LLM nudge <b>±5%</b></div>
+      <div class="float-chip chip-2" data-float>128-dim vector</div>
+      <div class="float-chip chip-3" data-float>Big Five + archetype</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>academics</span><i>◆</i><span>builders</span><i>◆</i><span>arts</span><i>◆</i><span>business</span><i>◆</i><span>healthcare</span><i>◆</i><span>legal</span><i>◆</i><span>civic</span><i>◆</i><span>media</span><i>◆</i><span>sports</span><i>◆</i><span>other</span><i>◆</i>
+    <span>academics</span><i>◆</i><span>builders</span><i>◆</i><span>arts</span><i>◆</i><span>business</span><i>◆</i><span>healthcare</span><i>◆</i><span>legal</span><i>◆</i><span>civic</span><i>◆</i><span>media</span><i>◆</i><span>sports</span><i>◆</i><span>other</span><i>◆</i>
+  </div>
+</div>
+
+<!-- ================= PROBLEM ================= -->
+<section class="section problem" id="problem">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">The problem</span>
+      <h2>Everyone's competing for the same <span class="grad">six photos.</span></h2>
+      <p class="lede">The result isn't just shallow matching. It's a professional ecosystem where the same handful of people date the same handful of people, over and over.</p>
+    </div>
+    <div class="prob-grid">
+      <article class="prob" data-reveal data-delay="60">
+        <div class="prob-num">01</div>
+        <h3>Signal poverty</h3>
+        <p>A photo says nothing about ambition, intellect or values. And bios are a battlefield — <em>"entrepreneur | traveller | sapiosexual"</em> appears on every third profile in every city.</p>
+      </article>
+      <article class="prob" data-reveal data-delay="140">
+        <div class="prob-num">02</div>
+        <h3>Privacy fear</h3>
+        <p>Half the professionals you'd actually want to meet won't join a dating app, because the colleagues, clients and founders they'd see there are the problem. Not the app.</p>
+      </article>
+      <article class="prob" data-reveal data-delay="220">
+        <div class="prob-num">03</div>
+        <h3>Mismatch fatigue</h3>
+        <p>A PhD researcher and a crypto day-trader match on looks. They meet. In ten minutes they discover they have nothing to say to each other. Repeat, indefinitely.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section how" id="how">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">How it works</span>
+      <h2>Four steps. <span class="grad">One</span> install.</h2>
+      <p class="lede">You do the work once. The engine does the rest, forever.</p>
+    </div>
+    <div class="steps">
+      <article class="step" data-reveal data-delay="60">
+        <div class="step-n">01</div>
+        <div class="step-art art-1">
+          <div class="pill pill-li">in</div><div class="pill pill-gh">⌥</div>
+          <div class="link-line"></div>
+        </div>
+        <h3>Connect once</h3>
+        <p>Link LinkedIn and GitHub with OAuth. Thirty seconds, read-only scopes, revoke any time.</p>
+      </article>
+      <article class="step" data-reveal data-delay="140">
+        <div class="step-n">02</div>
+        <div class="step-art art-2">
+          <div class="scan"></div>
+          <div class="dim-grid"></div>
+        </div>
+        <h3>We extract the signal</h3>
+        <p>Server-side extraction pulls the hard-to-fake parts of your work into a <strong>128-dimension vector</strong> and assigns your bucket with a confidence score.</p>
+      </article>
+      <article class="step" data-reveal data-delay="220">
+        <div class="step-n">03</div>
+        <div class="step-art art-3">
+          <div class="orbit"><i></i><i></i><i></i></div>
+        </div>
+        <h3>Your deck, your orbit</h3>
+        <p>You only ever see people from your bucket and its neighbours. No noise. No strangers. No <em>"here's a CEO in Delhi".</em></p>
+      </article>
+      <article class="step" data-reveal data-delay="300">
+        <div class="step-n">04</div>
+        <div class="step-art art-4">
+          <div class="match-burst">♥</div>
+        </div>
+        <h3>Match on substance</h3>
+        <p>Mutual like gives you a compatibility score and a shared-context label — the thing you'd actually open a conversation with.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUCKETS ================= -->
+<section class="section buckets" id="buckets">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">The taxonomy</span>
+      <h2>Ten buckets. <span class="grad">One</span> you belong to.</h2>
+      <p class="lede">Nobody swipes outside their orbit. Adjacency is hand-tuned, so the "near" buckets genuinely have things to talk about.</p>
+    </div>
+    <div class="bucket-grid" id="bucketGrid"></div>
+    <div class="adj-note" data-reveal>
+      <span class="mono">same</span> = 1.0 &nbsp;·&nbsp; <span class="mono">adjacent</span> = 0.6 &nbsp;·&nbsp; <span class="mono">unrelated</span> = 0.2
+      <p>Academics ↔ builders score near. Academics ↔ sports do not.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGINE ================= -->
+<section class="section engine" id="engine">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">The engine</span>
+      <h2>Four layers of <span class="grad">compatibility.</span></h2>
+      <p class="lede">Deterministic where it counts. Probabilistic only where it can't hurt.</p>
+    </div>
+
+    <div class="engine-layout">
+      <div class="engine-stack" data-reveal>
+        <div class="layer" data-layer="1">
+          <div class="layer-n">35%</div>
+          <div class="layer-body">
+            <h3>Feature vector</h3>
+            <p>128 dimensions derived from keyword hits across your work and study history. Dense, structural, and honest about what it's measuring.</p>
+          </div>
+        </div>
+        <div class="layer" data-layer="2">
+          <div class="layer-n">25%</div>
+          <div class="layer-body">
+            <h3>Bucket affinity</h3>
+            <p>Same bucket scores 1.0, adjacent 0.6, everything else 0.2. The floor is high on purpose — you'd rather see nobody than the wrong crowd.</p>
+          </div>
+        </div>
+        <div class="layer" data-layer="3">
+          <div class="layer-n">25%</div>
+          <div class="layer-body">
+            <h3>Quiz compatibility</h3>
+            <p>30 questions across six dimensions, scored with a <strong>geometric mean</strong> so one mismatched axis drags the whole pair down. Dealbreaker questions cap the score at 0.15.</p>
+          </div>
+        </div>
+        <div class="layer" data-layer="4">
+          <div class="layer-n">15%</div>
+          <div class="layer-body">
+            <h3>Preferences</h3>
+            <p>Age range, distance, and the buckets you want to see — applied as hard filters before anything is scored.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="engine-side">
+        <div class="formula-card" data-reveal>
+          <span class="kicker">The score</span>
+          <pre class="formula"><code><span class="f-v">score</span> = <span class="f-n">0.35</span>·<span class="f-t">vector</span>
+      + <span class="f-n">0.25</span>·<span class="f-t">bucket</span>
+      + <span class="f-n">0.25</span>·<span class="f-t">quiz</span>
+      + <span class="f-n">0.15</span>·<span class="f-t">prefs</span>
+
+<span class="f-c">×</span> <span class="f-t">authenticity</span> <span class="f-c">(0.95 – 1.04)</span>
+<span class="f-c">×</span> <span class="f-t">llmNudge</span>    <span class="f-c">(0.95 – 1.05)</span></code></pre>
+          <p class="formula-note">Both multipliers are <strong>boost-only</strong>. The engine can promote a good candidate but never bury one — a bad model day can't remove someone you should meet.</p>
+        </div>
+
+        <div class="dims-card" data-reveal data-delay="120">
+          <span class="kicker">Six axes</span>
+          <ul class="dims">
+            <li><b>Temperament</b><span>How you're wired day to day</span></li>
+            <li><b>Social style</b><span>How you recharge and connect</span></li>
+            <li><b>Conflict style</b><span>How you fight and repair</span></li>
+            <li><b>Lifestyle</b><span>Habits you live with daily</span></li>
+            <li><b>Values</b><span>What you believe is right</span></li>
+            <li><b>Life goals</b><span>Where your life is heading</span></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <div class="traits" data-reveal>
+      <div class="trait"><span class="trait-k">OCEAN</span><p>Big Five personality, derived from the same 30 answers — so a match is scored on how you actually behave, not just what you want.</p></div>
+      <div class="trait"><span class="trait-k">DAT</span><p>Differential Aptitude Test — divergence, originality and flexibility scored from your open-text answers, keyword-normalised against the corpus.</p></div>
+      <div class="trait"><span class="trait-k">LIWC</span><p>Word-level analysis on your language: how you write is a signal, and the engine reads it for tone, drive and warmth.</p></div>
+      <div class="trait"><span class="trait-k">LLM</span><p>A small local model reads your answers for soft signals. It only ever nudges the rank by 5% — it can never label or filter you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="section privacy" id="privacy">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">The privacy contract</span>
+      <h2>The best feature is the one that <span class="grad">never renders.</span></h2>
+      <p class="lede">Your job title is the most sensitive thing you own. We read it. We never show it. Not to other users, not to employers, not to anyone.</p>
+    </div>
+    <div class="privacy-grid">
+      <div class="priv-viz" data-reveal>
+        <div class="priv-screen">
+          <div class="priv-row"><span class="ok">✓</span> Name <em>visible</em></div>
+          <div class="priv-row"><span class="ok">✓</span> Age <em>visible</em></div>
+          <div class="priv-row"><span class="ok">✓</span> City <em>visible</em></div>
+          <div class="priv-row"><span class="ok">✓</span> Photo <em>visible</em></div>
+          <div class="priv-row"><span class="ok">✓</span> Bucket label <em>visible</em></div>
+          <div class="priv-row"><span class="ok">✓</span> Compatibility score <em>visible</em></div>
+          <div class="priv-row locked"><span class="no">✕</span> Job title <em>never rendered</em></div>
+          <div class="priv-row locked"><span class="no">✕</span> Company <em>never rendered</em></div>
+          <div class="priv-row locked"><span class="no">✕</span> Repositories <em>never rendered</em></div>
+          <div class="priv-row locked"><span class="no">✕</span> Network <em>never rendered</em></div>
+          <div class="priv-row locked"><span class="no">✕</span> Access tokens <em>server-side only</em></div>
+        </div>
+      </div>
+      <ul class="priv-list">
+        <li data-reveal data-delay="60"><b>Read-only by default</b><p>We request the narrowest scopes that exist. Nothing is posted, liked, or messaged on your behalf.</p></li>
+        <li data-reveal data-delay="120"><b>Server-side only</b><p>Extraction runs on our servers. Your raw profile data is never sent to a third party — including the AI model, which runs locally on our own hardware.</p></li>
+        <li data-reveal data-delay="180"><b>Row-level security</b><p>Every query runs inside a transaction scoped to <code>app.user_id</code>. A pooled connection physically cannot leak one user's context into another's.</p></li>
+        <li data-reveal data-delay="240"><b>Consent per platform</b><p>Link or unlink each account individually. Unlink deletes your tokens and your derived snapshot within 24 hours.</p></li>
+        <li data-reveal data-delay="300"><b>Erase on request</b><p>Right to erasure under the DPDP Act 2023. One request, everything gone.</p></li>
+        <li data-reveal data-delay="360"><b>Signal only, no display</b><p>Your work informs the match. It is never shown. There is no setting, paywall or feature that reveals it — because there is no code path that renders it.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">Features</span>
+      <h2>Everything it does, <span class="grad">out loud.</span></h2>
+      <p class="lede">No vague promises. Here is the actual feature set, and what it does for you.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat feat-wide" data-reveal data-delay="60">
+        <div class="feat-ic">◈</div>
+        <h3>Bucket isolation</h3>
+        <p>Your deck is drawn only from your bucket and its adjacent buckets. The noise floor is high on purpose — <b>we'd rather show you nobody than show you everyone.</b></p>
+        <div class="feat-bar"><i style="--w:88%"></i></div>
+        <span class="feat-tag">always on</span>
+      </article>
+      <article class="feat" data-reveal data-delay="120">
+        <div class="feat-ic">⌘</div>
+        <h3>128-dim vector</h3>
+        <p>Structured from your actual output, not a bio. Rebuilt on every new connection.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="180">
+        <div class="feat-ic">◎</div>
+        <h3>30-question quiz</h3>
+        <p>Six dimensions, Big Five personality, and an archetype — scored with a geometric mean, not a lazy average.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="240">
+        <div class="feat-ic">✎</div>
+        <h3>Open-text analysis</h3>
+        <p>Free-text answers scored for creativity, originality, tone and warmth — DAT and LIWC-style, on-device.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="300">
+        <div class="feat-ic">⟡</div>
+        <h3>Authenticity tier</h3>
+        <p>High, medium or review. Consistency between how you write and how you answer. A small boost, never a filter.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="360">
+        <div class="feat-ic">⇄</div>
+        <h3>Local LLM signals</h3>
+        <p>A small model reads your answers for nuance the lexicon misses. It only nudges the rank — never labels, never filters.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="420">
+        <div class="feat-ic">⚑</div>
+        <h3>Dealbreaker vetoes</h3>
+        <p>Star questions cap a pair's compatibility at 0.15. Some things aren't worth negotiating.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="480">
+        <div class="feat-ic">◍</div>
+        <h3>Shared-context labels</h3>
+        <p>Your matches arrive with <b>the actual reason</b> — the shared interest, value or trajectory that made you compatible.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="540">
+        <div class="feat-ic">⛨</div>
+        <h3>Revocable connections</h3>
+        <p>Unlink any platform in one tap. Tokens and snapshot deleted within 24 hours, features recomputed.</p>
+      </article>
+      <article class="feat" data-reveal data-delay="600">
+        <div class="feat-ic">⌛</div>
+        <h3>Instant unmatch</h3>
+        <p>Don't want your colleagues at that conference seeing you? Remove a match and it is gone, immediately and completely.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="kicker">Pricing</span>
+      <h2>Free while in beta. <span class="grad">Then honest.</span></h2>
+      <p class="lede">No paywalls on privacy. The paid tier buys you reach, never exposure.</p>
+    </div>
+    <div class="price-grid">
+      <article class="price" data-reveal data-delay="60">
+        <h3>Beta</h3>
+        <div class="price-amt"><span class="cur">₹</span>0</div>
+        <p class="price-sub">Free during private beta</p>
+        <ul>
+          <li>✓ Unlimited deck</li>
+          <li>✓ Both platform connections</li>
+          <li>✓ Full quiz + vector scoring</li>
+          <li>✓ Match insights</li>
+        </ul>
+        <a href="#get" class="btn btn-ghost btn-block" data-cursor="link">Join the beta</a>
+      </article>
+      <article class="price price-pro" data-reveal data-delay="140">
+        <div class="price-flag">Most popular</div>
+        <h3>Plus</h3>
+        <div class="price-amt"><span class="cur">₹</span>499<small>/mo</small></div>
+        <p class="price-sub">More reach, same privacy</p>
+        <ul>
+          <li>✓ Everything in Beta</li>
+          <li>✓ See who liked you</li>
+          <li>✓ Priority deck position</li>
+          <li>✓ Unlimited unmatch &amp; boost</li>
+        </ul>
+        <a href="#get" class="btn btn-solid btn-block" data-cursor="link">Get Lumina</a>
+      </article>
+      <article class="price" data-reveal data-delay="220">
+        <h3>Founding</h3>
+        <div class="price-amt"><span class="cur">₹</span>0</div>
+        <p class="price-sub">For the first 1,000 people</p>
+        <ul>
+          <li>✓ Everything in Plus, forever</li>
+          <li>✓ Founding badge on your profile</li>
+          <li>✓ Direct line to the team</li>
+          <li>✓ Vote on the roadmap</li>
+        </ul>
+        <a href="#get" class="btn btn-ghost btn-block" data-cursor="link">Claim a spot</a>
+      </article>
+    </div>
+    <p class="price-foot" data-reveal>Never sell your data. Never show your work. Never paywall privacy. <span class="mono">Non-negotiable.</span></p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="section cta" id="get">
+  <div class="wrap">
+    <div class="cta-box" data-reveal>
+      <div class="cta-glow"></div>
+      <span class="kicker">Private beta</span>
+      <h2>Install it once.<br /><span class="grad">Stay out of the crowd.</span></h2>
+      <p>Ten buckets. One install. The people you'll actually want to meet are already here — you just haven't been shown them yet.</p>
+      <form class="cta-form" id="ctaForm" novalidate>
+        <input type="email" id="email" placeholder="you@company.com" aria-label="Email address" required />
+        <button type="submit" class="btn btn-solid btn-lg" data-cursor="link">Get early access</button>
+      </form>
+      <p class="cta-note" id="ctaNote">We'll only email you when your city opens. No newsletters, no spam.</p>
+      <div class="cta-cities">
+        <span>Launching in</span>
+        <b>Bengaluru</b><b>Mumbai</b><b>Delhi NCR</b><b>Hyderabad</b><b>Chennai</b><b>Pune</b>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div class="footer-brand">
+      <a class="brand" href="#top" data-cursor="link"><span class="brand-mark">◈</span><span class="brand-name">LUMINA</span></a>
+      <p>Dating for people with a career. Matched on what you built, not what you look like.</p>
+    </div>
+    <div class="footer-cols">
+      <div><h4>Product</h4><a href="#how" data-cursor="link">How it works</a><a href="#buckets" data-cursor="link">Buckets</a><a href="#engine" data-cursor="link">Engine</a><a href="#features" data-cursor="link">Features</a></div>
+      <div><h4>Legal</h4><a href="#privacy" data-cursor="link">Privacy</a><a href="#privacy" data-cursor="link">Privacy contract</a><a href="#pricing" data-cursor="link">Pricing</a></div>
+      <div><h4>Company</h4><a href="#get" data-cursor="link">Contact</a><a href="#get" data-cursor="link">Careers</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Lumina. Built in India.</p>
+    <p class="mono">DPDP Act 2023 compliant · row-level security · local AI</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
